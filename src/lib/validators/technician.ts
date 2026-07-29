@@ -21,9 +21,14 @@ export const serviceFormSchema = z.object({
 export type ServiceFormInput = z.infer<typeof serviceFormSchema>;
 
 const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
-export const slotSchema = z.object({
-  date: z.string().min(1, 'Choose a date'),
-  startTime: z.string().regex(timeRegex, 'Use HH:mm, e.g. 09:00'),
-  endTime: z.string().regex(timeRegex, 'Use HH:mm, e.g. 11:00'),
-});
+export const slotSchema = z
+  .object({
+    date: z.string().min(1, 'Choose a date'),
+    startTime: z.string().regex(timeRegex, 'Use HH:mm, e.g. 09:00'),
+    endTime: z.string().regex(timeRegex, 'Use HH:mm, e.g. 11:00'),
+  })
+  .refine((data) => data.endTime > data.startTime, {
+    message: 'End time must be after start time',
+    path: ['endTime'],
+  });
 export type SlotInput = z.infer<typeof slotSchema>;
