@@ -3,7 +3,13 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { AlertCircle } from 'lucide-react';
-import { getCategories, getServices, getTechnicians, type ServiceFilters as Filters } from '@/lib/api/services';
+import {
+  getCategories,
+  getServices,
+  getTechnicians,
+} from "@/lib/api/services";
+
+import type { ServiceFilters as Filters } from "@/lib/types";
 import { ServiceFilters } from '@/components/services/ServiceFilters';
 import { ServiceCard } from '@/components/services/ServiceCard';
 import { TechnicianCard } from '@/components/technicians/TechnicianCard';
