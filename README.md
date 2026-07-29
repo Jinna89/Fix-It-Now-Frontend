@@ -2,6 +2,24 @@
 
 A Next.js 14 (App Router) + TypeScript frontend for the FixItNow home-services marketplace, built against the `fixitnow-backend` Express/Prisma API.
 
+## Features:
+
+- Full Stack Project (Next.js frontend + Express/Prisma backend)
+- Role-based system — Customer, Technician, Admin
+- Dynamic Service & Technician Browsing with Search/Filters
+- Technician Profile Pages with Ratings & Reviews
+- Interactive Time-Slot Booking System
+- Booking Status Tracking (Requested → Accepted → Paid → In Progress → Completed)
+- Cancel Booking & Leave Review
+- SSLCommerz Payment Integration with Success/Cancel Pages
+- Technician Availability Scheduler
+- Technician Booking Management (Accept/Decline/Complete)
+- Admin Dashboard — User Ban/Unban, Category Management, Platform Stats
+- Login & Registration with JWT Authentication
+- Role-Protected Routes via Next.js Middleware
+- Form Validation with Zod + React Hook Form
+- Toast Notifications & Error Boundaries
+
 ## Stack
 
 - Next.js 14 App Router, TypeScript
@@ -50,27 +68,6 @@ middleware.ts          # role-based route protection for /dashboard/*
 ```
 
 See `API_INTEGRATION.md` for the full frontend-to-backend endpoint mapping, including two small additions made to the backend (`GET /technician/profile`, `GET /technician/availability`) and a fix to the SSLCommerz redirect flow so it lands on this app's payment pages instead of returning raw JSON.
-
-## Features:
-
-```
-- Full Stack Project (Next.js frontend + Express/Prisma backend)
-- Role-based system — Customer, Technician, Admin
-- Dynamic Service & Technician Browsing with Search/Filters
-- Technician Profile Pages with Ratings & Reviews
-- Interactive Time-Slot Booking System
-- Booking Status Tracking (Requested → Accepted → Paid → In Progress → Completed)
-- Cancel Booking & Leave Review
-- SSLCommerz Payment Integration with Success/Cancel Pages
-- Technician Availability Scheduler
-- Technician Booking Management (Accept/Decline/Complete)
-- Admin Dashboard — User Ban/Unban, Category Management, Platform Stats
-- Login & Registration with JWT Authentication
-- Role-Protected Routes via Next.js Middleware
-- Form Validation with Zod + React Hook Form
-- Toast Notifications & Error Boundaries
-
-```
 
 ## Notes
 
