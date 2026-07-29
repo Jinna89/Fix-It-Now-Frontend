@@ -26,7 +26,10 @@ export function ServicesManager({ services }: { services: Service[] }) {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ServiceFormInput>({ resolver: zodResolver(serviceFormSchema) });
+  } = useForm<ServiceFormInput>({
+    resolver: zodResolver(serviceFormSchema),
+    defaultValues: { categoryId: '', title: '', description: '', location: '' },
+  });
 
   const createMutation = useMutation({
     mutationFn: (values: ServiceFormInput) =>
@@ -41,7 +44,7 @@ export function ServicesManager({ services }: { services: Service[] }) {
     onSuccess: () => {
       toast.success('Service added.');
       queryClient.invalidateQueries({ queryKey: ['technician-profile'] });
-      reset({ categoryId: '', title: '', description: '', price: undefined, durationMins: undefined, location: '' } as any);
+      reset({ categoryId: '', title: '', description: '', location: '' });
     },
     onError: (err) => {
       toast.error(err instanceof ApiClientError ? err.message : 'Could not add service.');
