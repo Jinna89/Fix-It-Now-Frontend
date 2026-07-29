@@ -136,7 +136,6 @@ export interface ApiErrorShape {
 export interface ServiceFilters {
   category?: string;
   location?: string;
-  // ...whatever fields it already has
   [key: string]: string | number | boolean | null | undefined;
 }
 
