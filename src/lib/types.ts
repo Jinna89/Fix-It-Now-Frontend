@@ -134,12 +134,34 @@ export interface ApiErrorShape {
 }
 
 export interface ServiceFilters {
-  category?: string;
+  categoryId?: string;
   location?: string;
-  [key: string]: string | number | boolean | null | undefined;
+  minPrice?: number;
+  maxPrice?: number;
+  minRating?: number;
+  search?: string;
+  page?: number;
+  limit?: number;
+
+  [key: string]:
+    | string
+    | number
+    | boolean
+    | null
+    | undefined;
 }
 
 export interface TechnicianFilters {
-  // ...existing fields stay exactly as they are...
-  [key: string]: string | number | boolean | null | undefined;
+  location?: string;
+  minRating?: number;
+  skill?: string;
+  page?: number;
+  limit?: number;
+
+  [key: string]:
+    | string
+    | number
+    | boolean
+    | null
+    | undefined;
 }
