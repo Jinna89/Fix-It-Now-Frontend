@@ -132,3 +132,15 @@ export interface ApiErrorShape {
   message: string;
   errorDetails: unknown;
 }
+
+export interface ServiceFilters {
+  category?: string;
+  location?: string;
+  // ...whatever fields it already has
+  [key: string]: string | number | boolean | null | undefined;
+}
+
+export interface TechnicianFilters {
+  // ...existing fields stay exactly as they are...
+  [key: string]: string | number | boolean | null | undefined;
+}
