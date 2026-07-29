@@ -77,9 +77,9 @@ export default function RegisterPage() {
             <div className="grid grid-cols-2 gap-3">
               {(
                 [
-                  { role: 'CUSTOMER' as Role, label: 'Book services', icon: UserIcon },
-                  { role: 'TECHNICIAN' as Role, label: 'Offer services', icon: HardHat },
-                ]
+                  { role: 'CUSTOMER', label: 'Book services', icon: UserIcon },
+                  { role: 'TECHNICIAN', label: 'Offer services', icon: HardHat },
+                ] as const
               ).map(({ role: r, label, icon: Icon }) => (
                 <button
                   type="button"
