@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Button } from '@/components/ui/Button';
 import type { Category } from '@/lib/types';
-import type { ServiceFilters as Filters } from '@/lib/api/services';
+import type { ServiceFilters as Filters } from "@/lib/types";
 
 export function ServiceFilters({
   categories,
